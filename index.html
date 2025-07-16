@@ -3,395 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>忙しい毎日をサポートする、余白が生まれる家 | 株式会社アート・宙</title>
-    <meta name="description" content="共働き家庭が家事・育児・在宅ワークを両立させるため、余白を活かした効率的な生活動線、機能的な空間、そして心のゆとりを提供する家づくりを提案します。">
+    <title>株式会社アート・宙 | 高品質な素材と洗練された設計で理想の住まいを</title>
+    <meta name="description" content="株式会社アート・宙は、高品質な素材と洗練された設計で、あなたの理想の住まいを実現します。自然素材にこだわった建材と一級建築士による設計で、新しい生活を始めませんか？">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         * {
-            font-family: 'Noto Sans JP', 'Source Han Sans', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
         }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(59, 130, 246, 0.8), rgba(16, 185, 129, 0.8)), url('https://www.crestrealestate.com/wp-content/uploads/2023/07/r-architecture-0tKCSyLXqQM-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
         .btn-primary {
-            background: linear-gradient(135deg, #ff8c00, #ffa500);
+            background: linear-gradient(135deg, #10b981, #3b82f6);
             transition: all 0.3s ease;
         }
+        
         .btn-primary:hover {
+            background: linear-gradient(135deg, #059669, #2563eb);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+        
+        .section-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
-        .section-padding {
-            padding: 80px 0;
+        
+        .card-hover {
+            transition: all 0.3s ease;
         }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .honeypot {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            visibility: hidden;
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        .error-message {
-            display: none;
-            color: #ef4444;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-        .error-message.show {
-            display: block;
+        
+        @media (max-width: 768px) {
+            .hero-bg, .parallax {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
-<body class="text-gray-800">
-    <!-- ファーストビュー -->
-    <section class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('https://www.marthastewart.com/thmb/JSJwSMsolMumuoCAHHIjICbzYgs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/BradRamseyInteriors_credit_CarolineSharpnack-dee35c1fab554898af7c549697c2f592.jpg'); background-size: cover; background-position: center;">
-        <div class="container mx-auto px-4 text-center text-white z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in">
-                忙しい毎日をサポートする、<br>余白が生まれる家。
+<body class="bg-gray-50">
+    <!-- ヒーローエリア -->
+    <header class="hero-bg min-h-screen flex items-center justify-center text-white relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                高品質な素材と洗練された設計が生み出す、<br>
+                <span class="text-yellow-300">洗練された住まい</span>で<br>
+                新しい生活を始めませんか？
             </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto fade-in">
-                家事・育児・在宅ワークを両立し、余白のあるゆとりある暮らしを実現。
+            <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed">
+                株式会社アート・宙は、自然素材の温もりと現代的な設計美を融合し、<br>
+                あなたの理想を超える住まいを創造します。
             </p>
-            <!-- EDIT: アンカーリンクに変更 -->
-            <a href="#request-form" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center fade-in">
-                <i class="fas fa-download mr-2"></i>
-                資料を無料で受け取る
+            <a href="#cta-section" class="btn-primary inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline shadow-lg">
+                <i class="fas fa-arrow-down mr-2"></i>
+                資料請求・無料相談はこちら
+            </a>
+        </div>
+    </header>
+
+    <!-- ベネフィット訴求セクション -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
+                    <span class="text-gradient">未来の暮らし</span>を、今日から体感してください
+                </h2>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-800">
+                            自然素材に包まれた、心地よい毎日
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-leaf text-green-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">深呼吸したくなる空間</h4>
+                                    <p class="text-gray-600">無垢材の床と漆喰の壁が生み出す、自然な調湿機能。一歩足を踏み入れた瞬間から、空気の違いを実感していただけます。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-sun text-yellow-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">光と風を活かした設計</h4>
+                                    <p class="text-gray-600">一級建築士による綿密な計算で、自然光を最大限に活用。季節の移ろいを感じながら、快適な室内環境を維持します。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-heart text-red-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">家族の絆を深める空間設計</h4>
+                                    <p class="text-gray-600">オープンな間取りでありながら、プライバシーにも配慮。家族それぞれが心地よく過ごせる空間づくりを実現します。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://www.arredaremoderno.com/blog/wp-content/uploads/2022/09/Salotto-moderno-r-architecture-unsplash-3-scaled.jpg" alt="自然光に満ちた洗練されたリビング空間" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- サービス概要セクション -->
+    <section class="py-20 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
+                    <span class="text-gradient">アート・宙の強み</span>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-tree text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">厳選された自然素材</h3>
+                        <p class="text-gray-600">国産の無垢材を中心に、調湿・断熱性能に優れた自然素材のみを使用。シックハウス症候群の心配もない、安心・安全な住環境を提供します。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-drafting-compass text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">一級建築士による設計</h3>
+                        <p class="text-gray-600">豊富な経験を持つ一級建築士が、お客様のライフスタイルに合わせたオーダーメイド設計を実現。機能性と美しさを両立した理想の住まいを創造します。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-hammer text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">伝統工法×現代技術</h3>
+                        <p class="text-gray-600">日本の伝統的な木造建築技術と最新の建築技術を融合。耐震性・耐久性に優れた構造で、次世代まで受け継がれる住まいを実現します。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">環境配慮型設計</h3>
+                        <p class="text-gray-600">省エネルギー設計により、光熱費を大幅に削減。太陽光発電や雨水利用システムなど、環境に優しい住まいづくりを推進しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 中間CTAセクション -->
+    <section id="cta-section" class="py-16 bg-gradient-to-r from-blue-600 to-green-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                理想の住まいについて、お気軽にご相談ください
+            </h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">
+                経験豊富なスタッフが、あなたの夢を形にするお手伝いをいたします。<br>
+                まずは資料請求から始めてみませんか？
+            </p>
+            <a href="#contact-form" class="btn-primary inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline shadow-lg bg-white text-blue-600 hover:bg-gray-100">
+                <i class="fas fa-file-alt mr-2"></i>
+                資料請求・無料相談はこちら
             </a>
         </div>
     </section>
 
-    <!-- 課題提起・共感 -->
-    <section class="section-padding bg-gray-50">
+    <!-- 安心材料セクション -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                            家事や育児、仕事の時間を<br>効率よく使いたい
-                        </h2>
-                        <p class="text-lg leading-relaxed text-gray-600">
-                            毎日の家事や育児、在宅ワークで忙しいあなた。どこから手をつけるべきか、家づくりのアイデアが湧かない、そんな不安を抱えるあなたに、この家づくりを提案したい。
-                        </p>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
+                    <span class="text-gradient">安心と信頼</span>の証
+                </h2>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <img src="https://notfaroff.com/wp-content/uploads/campaign-creators-e6n7uoEnYbA-unsplash.jpg" alt="建築士との綿密な打ち合わせ風景" class="rounded-lg shadow-xl w-full h-auto">
                     </div>
-                    <div class="fade-in">
-                        <img src="https://s3.amazonaws.com/res.e-institutes.com/IDI/Blog/posts/kitchen-workflow/workflow-kitchen-2.jpg" alt="効率的な動線や家事育児と仕事がうまく交差する空間" class="w-full h-80 object-cover rounded-lg shadow-xl">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ベネフィット -->
-    <section class="section-padding bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in order-2 md:order-1">
-                        <img src="https://www.extraspace.com/blog/wp-content/uploads/2020/04/create-productive-work-from-home-office-spare-room.jpg" alt="家事動線がスムーズに設計されたキッチンや在宅ワークができる書斎" class="w-full h-80 object-cover rounded-lg shadow-xl">
-                    </div>
-                    <div class="fade-in order-1 md:order-2">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                            家事も育児も、もっと楽に。<br>未来の暮らしが豊かに。
-                        </h2>
-                        <p class="text-lg leading-relaxed text-gray-600 mb-8">
-                            余白を活かした空間設計と効率的な動線が、あなたの毎日をサポート。家事も育児も仕事も、スマートに両立できる家づくり。
-                        </p>
-                        <a href="#request-form" class="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-flex items-center">
-                            <i class="fas fa-comments mr-2"></i>
-                            無料相談を申し込む
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- サービス概要 -->
-    <section class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        私たちの家づくりとは
-                    </h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        忙しい生活を支える、機能的でスタイリッシュな家づくり
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="text-center fade-in">
-                        <!-- EDIT: 適切な画像に差し替え -->
-                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-route text-orange-500 text-2xl"></i>
-                        </div>
-                        <!-- TODO: 差し替え -->
-                        <h3 class="text-xl font-semibold mb-3">効率的な動線設計</h3>
-                        <p class="text-gray-600">家事を効率よくこなせる動線設計</p>
-                    </div>
-                    <div class="text-center fade-in">
-                        <!-- EDIT: 適切な画像に差し替え -->
-                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-expand-arrows-alt text-orange-500 text-2xl"></i>
-                        </div>
-                        <!-- TODO: 差し替え -->
-                        <h3 class="text-xl font-semibold mb-3">フレキシブルな空間</h3>
-                        <p class="text-gray-600">育児や在宅ワークに対応するフレキシブルな空間</p>
-                    </div>
-                    <div class="text-center fade-in">
-                        <!-- EDIT: 適切な画像に差し替え -->
-                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-cog text-orange-500 text-2xl"></i>
-                        </div>
-                        <!-- TODO: 差し替え -->
-                        <h3 class="text-xl font-semibold mb-3">最新の住宅性能</h3>
-                        <p class="text-gray-600">最新の住宅性能を兼ね備えた設計</p>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6 fade-in">
-                    <img src="https://cdn.mos.cms.futurecdn.net/BXdDmv2wRim24pgcr29X6d.jpg" alt="キッチンの施工事例" class="w-full h-48 object-cover rounded-lg shadow-lg">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/alexander-design-contemporary-family-room-1555952765.jpg" alt="リビングの施工事例" class="w-full h-48 object-cover rounded-lg shadow-lg">
-                    <img src="https://cdn.prod.website-files.com/6292c0072508d8e55a1d86fa/65c18d935ad57fe7b1f54d1f_Blog%20%23%20197%20-%20How%20to%20Create%20a%20Productive%20Home%20Office%20Space%20-%20PRODUCTIVITY.jpg" alt="書斎の施工事例" class="w-full h-48 object-cover rounded-lg shadow-lg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 施工事例 -->
-    <section class="section-padding bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        実際の施工事例
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="fade-in">
-                        <img src="https://cabinetsplus.s3.us-west-2.amazonaws.com/kitchen_layouts_b1610533f9.png" alt="家事動線を最適化したキッチン" class="w-full h-64 object-cover rounded-lg shadow-lg mb-4">
-                        <h3 class="text-xl font-semibold mb-2">家事動線を最適化したキッチン</h3>
-                        <p class="text-gray-600">効率的な動線で、家事をスマートにこなせるキッチンの写真</p>
-                    </div>
-                    <div class="fade-in">
-                        <img src="https://www.thespruce.com/thmb/K92p_9rZUgI4u86EhfvbUiSLS5s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/minimalist-living-room-ideas-5213203-hero-d27f8dcfa0b84706adbbd28ea0e1b48d.jpg" alt="オープンで機能的なリビング" class="w-full h-64 object-cover rounded-lg shadow-lg mb-4">
-                        <h3 class="text-xl font-semibold mb-2">オープンで機能的なリビング</h3>
-                        <p class="text-gray-600">家族みんなが集まる、開放感あるリビングの写真</p>
-                    </div>
-                    <div class="fade-in">
-                        <img src="https://www.extraspace.com/blog/wp-content/uploads/2020/04/create-productive-work-from-home-office-brighten-the-office.jpg" alt="在宅ワーク専用のワークスペース" class="w-full h-64 object-cover rounded-lg shadow-lg mb-4">
-                        <h3 class="text-xl font-semibold mb-2">在宅ワーク専用のワークスペース</h3>
-                        <p class="text-gray-600">仕事と育児の両立をサポートする、静かな作業空間の写真</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 信頼セクション -->
-    <section class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                            確かな実績と信頼
-                        </h2>
-                        <div class="space-y-4">
-                            <p class="text-lg text-gray-600">
-                                機能性とデザイン性を兼ね備えた、実績のある家づくり
-                            </p>
-                            <p class="text-lg text-gray-600">
-                                住宅関連の数々の賞を受賞した実績
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                <i class="fas fa-award text-orange-500 text-3xl mb-2"></i>
-                                <p class="font-semibold">優秀住宅賞</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                <i class="fas fa-medal text-orange-500 text-3xl mb-2"></i>
-                                <p class="font-semibold">デザイン賞</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                <i class="fas fa-certificate text-orange-500 text-3xl mb-2"></i>
-                                <p class="font-semibold">品質認定</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                <i class="fas fa-star text-orange-500 text-3xl mb-2"></i>
-                                <p class="font-semibold">顧客満足度</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDIT: 資料請求フォーム追加 -->
-    <section id="request-form" class="section-padding bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        資料を無料で受け取る
-                    </h2>
-                    <p class="text-xl text-gray-600">
-                        余白のあるゆとりある暮らしを実現する家づくりの詳細資料をお送りします
-                    </p>
-                </div>
-
-                <div class="bg-white shadow-md rounded-2xl p-8 max-w-2xl mx-auto fade-in">
-                    <!-- サーバー側ハンドラに差し替え推奨 -->
-                    <form method="POST" action="mailto:staff@saltandpepper.jp" enctype="text/plain" id="requestForm">
-                        <!-- honeypot スパム対策 -->
-                        <div class="honeypot">
-                            <label for="website">ウェブサイト:</label>
-                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                        </div>
-
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-800">
+                            建築のプロフェッショナルが全工程をサポート
+                        </h3>
                         <div class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                                    お名前 <span class="text-red-500 text-xs">*必須</span>
-                                </label>
-                                <input type="text" id="name" name="name" required aria-required="true" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm">
-                                <p id="err-name" class="error-message">お名前を入力してください</p>
-                            </div>
-
-                            <div>
-                                <label for="furigana" class="block text-sm font-medium text-gray-700 mb-2">
-                                    ふりがな
-                                </label>
-                                <input type="text" id="furigana" name="furigana" placeholder="やまだ たろう" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm">
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                    メールアドレス <span class="text-red-500 text-xs">*必須</span>
-                                </label>
-                                <input type="email" id="email" name="email" required aria-required="true" placeholder="example@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm">
-                                <p id="err-email" class="error-message">正しいメールアドレスを入力してください</p>
-                            </div>
-
-                            <div>
-                                <label for="tel" class="block text-sm font-medium text-gray-700 mb-2">
-                                    電話番号
-                                </label>
-                                <input type="tel" id="tel" name="tel" placeholder="090-1234-5678" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm">
-                            </div>
-
-                            <div>
-                                <label for="prefecture" class="block text-sm font-medium text-gray-700 mb-2">
-                                    都道府県
-                                </label>
-                                <select id="prefecture" name="prefecture" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm">
-                                    <option value="">都道府県を選択してください</option>
-                                    <option value="北海道">北海道</option>
-                                    <option value="青森県">青森県</option>
-                                    <option value="岩手県">岩手県</option>
-                                    <option value="宮城県">宮城県</option>
-                                    <option value="秋田県">秋田県</option>
-                                    <option value="山形県">山形県</option>
-                                    <option value="福島県">福島県</option>
-                                    <option value="茨城県">茨城県</option>
-                                    <option value="栃木県">栃木県</option>
-                                    <option value="群馬県">群馬県</option>
-                                    <option value="埼玉県">埼玉県</option>
-                                    <option value="千葉県">千葉県</option>
-                                    <option value="東京都">東京都</option>
-                                    <option value="神奈川県">神奈川県</option>
-                                    <option value="新潟県">新潟県</option>
-                                    <option value="富山県">富山県</option>
-                                    <option value="石川県">石川県</option>
-                                    <option value="福井県">福井県</option>
-                                    <option value="山梨県">山梨県</option>
-                                    <option value="長野県">長野県</option>
-                                    <option value="岐阜県">岐阜県</option>
-                                    <option value="静岡県">静岡県</option>
-                                    <option value="愛知県">愛知県</option>
-                                    <option value="三重県">三重県</option>
-                                    <option value="滋賀県">滋賀県</option>
-                                    <option value="京都府">京都府</option>
-                                    <option value="大阪府">大阪府</option>
-                                    <option value="兵庫県">兵庫県</option>
-                                    <option value="奈良県">奈良県</option>
-                                    <option value="和歌山県">和歌山県</option>
-                                    <option value="鳥取県">鳥取県</option>
-                                    <option value="島根県">島根県</option>
-                                    <option value="岡山県">岡山県</option>
-                                    <option value="広島県">広島県</option>
-                                    <option value="山口県">山口県</option>
-                                    <option value="徳島県">徳島県</option>
-                                    <option value="香川県">香川県</option>
-                                    <option value="愛媛県">愛媛県</option>
-                                    <option value="高知県">高知県</option>
-                                    <option value="福岡県">福岡県</option>
-                                    <option value="佐賀県">佐賀県</option>
-                                    <option value="長崎県">長崎県</option>
-                                    <option value="熊本県">熊本県</option>
-                                    <option value="大分県">大分県</option>
-                                    <option value="宮崎県">宮崎県</option>
-                                    <option value="鹿児島県">鹿児島県</option>
-                                    <option value="沖縄県">沖縄県</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    ご相談区分
-                                </label>
-                                <div class="space-y-2">
-                                    <label class="flex items-center">
-                                        <input type="radio" name="consultation_type" value="新築" class="mr-2">
-                                        <span class="text-sm">新築</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="consultation_type" value="リフォーム" class="mr-2">
-                                        <span class="text-sm">リフォーム</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="consultation_type" value="資料希望のみ" class="mr-2">
-                                        <span class="text-sm">資料希望のみ</span>
-                                    </label>
+                            <div class="flex items-start">
+                                <i class="fas fa-shield-alt text-blue-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">長期保証システム</h4>
+                                    <p class="text-gray-600">構造躯体20年、設備10年の長期保証。アフターメンテナンスまで責任を持ってサポートいたします。</p>
                                 </div>
                             </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                                    ご質問・ご要望
-                                </label>
-                                <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望がございましたらお聞かせください" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"></textarea>
+                            <div class="flex items-start">
+                                <i class="fas fa-search text-green-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">第三者検査による品質管理</h4>
+                                    <p class="text-gray-600">各工程において第三者機関による検査を実施。客観的な品質管理により、確かな施工品質を保証します。</p>
+                                </div>
                             </div>
-
-                            <div>
-                                <label class="flex items-start">
-                                    <input type="checkbox" id="privacy" name="privacy" required aria-required="true" class="mt-1 mr-2">
-                                    <span class="text-sm text-gray-700">
-                                        個人情報の取り扱いについて同意いたします <span class="text-red-500 text-xs">*必須</span>
-                                    </span>
-                                </label>
-                                <p id="err-privacy" class="error-message">個人情報の取り扱いについて同意してください</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-purple-500 text-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibeld text-lg mb-2">一級建築士常駐体制</h4>
+                                    <p class="text-gray-600">設計から施工まで一級建築士が常駐。専門的な技術とノウハウで、お客様の理想を確実に形にします。</p>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <button type="submit" class="w-full btn-primary text-white py-3 px-6 rounded-lg font-semibold text-lg">
-                                無料で資料請求する
+    <!-- 実績・データセクション -->
+    <section class="py-20 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
+                    <span class="text-gradient">確かな実績</span>と信頼
+                </h2>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
+                                <div class="text-gray-600">顧客満足度</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-green-600 mb-2">200+</div>
+                                <div class="text-gray-600">施工実績</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-purple-600 mb-2">15年</div>
+                                <div class="text-gray-600">平均勤続年数</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-yellow-600 mb-2">5つ</div>
+                                <div class="text-gray-600">建築賞受賞</div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800">お客様の声</h3>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex text-yellow-500">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">四日市市 T様</span>
+                                </div>
+                                <p class="text-gray-700">「自然素材の温もりを毎日感じられる住まいに大満足です。アート・宙さんの丁寧な対応と高い技術力に心から感謝しています。」</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://spauldingcommunications.com/wp-content/uploads/steve-driscoll-VsBl5PwVZpY-unsplash-scaled.jpg" alt="受賞歴のある美しい建築作品" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTAセクション -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                あなたの理想の住まいを、一緒に創造しませんか？
+            </h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">
+                高品質な素材と洗練された設計で、世界でただ一つの住まいを。<br>
+                まずはお気軽にお問い合わせください。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact-form" class="btn-primary inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline shadow-lg">
+                    <i class="fas fa-file-alt mr-2"></i>
+                    資料請求・無料相談はこちら
+                </a>
+                <a href="tel:059-356-0817" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline transition-all duration-300">
+                    <i class="fas fa-phone mr-2"></i>
+                    お電話でのお問い合わせ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- コンタクトフォーム -->
+    <section id="contact-form" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
+                    <span class="text-gradient">お問い合わせ</span>
+                </h2>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">お名前 *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">お電話番号 *</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ご希望の連絡方法</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>お電話</option>
+                                <option>メール</option>
+                                <option>どちらでも</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ご要望・ご質問</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ご要望やご質問がございましたら、お気軽にお聞かせください。"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary px-12 py-4 rounded-full text-lg font-semibold text-white shadow-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                送信する
                             </button>
                         </div>
                     </form>
@@ -400,71 +353,66 @@
         </div>
     </section>
 
-    <!-- CTA セクション -->
-    <section class="section-padding bg-gradient-to-r from-orange-400 to-orange-500">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
-                    理想の家づくりを始めませんか？
-                </h2>
-                <p class="text-xl mb-8 text-white opacity-90">
-                    余白のあるゆとりある暮らしを実現する家づくりの詳細資料を無料でお送りします
-                </p>
-                <!-- EDIT: アンカーリンクに変更 -->
-                <a href="#request-form" class="bg-white text-orange-500 px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center hover:shadow-xl transition-all duration-300">
-                    <i class="fas fa-download mr-2"></i>
-                    資料を無料で受け取る
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDIT: フッター情報差し替え -->
-    <footer class="bg-gray-800 text-white py-12">
+    <!-- フッター -->
+    <footer class="bg-gray-900 text-white py-16">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-2xl font-bold mb-6">株式会社 アート・宙<span class="text-sm">(そら)</span></h3>
-                <div class="space-y-2 text-gray-300">
-                    <p><strong>本社</strong></p>
-                    <p>〒510-0081 三重県四日市市北町3番4号</p>
-                    <p>TEL 059-356-0817</p>
-                    <br>
-                    <p>建設業許可 三重県知事 許可(般4) 第21401号</p>
-                    <p>一級建築士事務所登録 三重知事登録 第1-1703号</p>
-                    <p>宅地建物取引業者免許 三重県知事(5) 第2825号</p>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold mb-6 text-gradient">株式会社アート・宙</h3>
+                        <p class="text-gray-300 mb-6">
+                            高品質な素材と洗練された設計で、お客様の理想を超える住まいを創造します。自然素材の温もりと現代的な機能性を両立した住まいづくりを通じて、豊かな暮らしをご提案いたします。
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">サービス</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><a href="#" class="hover:text-white transition-colors">注文住宅</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">リフォーム</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">設計・監理</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">不動産</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">会社情報</h4>
+                        <div class="space-y-2 text-gray-300">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>〒510-0081<br>三重県四日市市北町3番4号</p>
+                            <p><i class="fas fa-phone mr-2"></i>059-356-0817</p>
+                            <p><i class="fas fa-clock mr-2"></i>平日 9:00-18:00</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="border-t border-gray-700 mt-8 pt-8">
-                    <p class="text-gray-400">&copy; 2024 株式会社 アート・宙. All rights reserved.</p>
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-sm text-gray-400 mb-4 md:mb-0">
+                            <p>建設業許可 三重県知事 許可(般4) 第21401号</p>
+                            <p>一級建築士事務所登録 三重知事登録 第1-1703号</p>
+                            <p>宅地建物取引業者免許 三重県知事(5) 第2825号</p>
+                        </div>
+                        <div class="text-sm text-gray-400">
+                            <p>&copy; 2024 株式会社アート・宙. All rights reserved.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // フェードインアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(function(el) {
-                observer.observe(el);
-            });
-        });
-
-        // EDIT: スムーズスクロール追加
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -476,45 +424,33 @@
             });
         });
 
-        // EDIT: フォームバリデーション
-        document.getElementById('requestForm').addEventListener('submit', function(e) {
-            var isValid = true;
-            var nameField = document.getElementById('name');
-            var emailField = document.getElementById('email');
-            var privacyField = document.getElementById('privacy');
+        // スクロール時のアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            // エラー表示をリセット
-            document.querySelectorAll('.error-message').forEach(function(el) {
-                el.classList.remove('show');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, observerOptions);
 
-            // 名前チェック
-            if (!nameField.value.trim()) {
-                document.getElementById('err-name').classList.add('show');
-                isValid = false;
-            }
+        // アニメーション対象の要素を設定
+        document.querySelectorAll('.card-hover, h2, h3').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
 
-            // メールアドレスチェック
-            if (!emailField.value.trim() || !emailField.validity.valid) {
-                document.getElementById('err-email').classList.add('show');
-                isValid = false;
-            }
-
-            // プライバシーポリシーチェック
-            if (!privacyField.checked) {
-                document.getElementById('err-privacy').classList.add('show');
-                isValid = false;
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-                return false;
-            }
-
-            // メールクライアント未設定環境への注意
-            if (!window.navigator.userAgent.includes('Thunderbird') && !window.navigator.userAgent.includes('Outlook')) {
-                console.warn('メールクライアントが設定されていない可能性があります。サーバー側フォーム処理への差し替えを推奨します。');
-            }
+        // フォーム送信処理
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。');
         });
     </script>
 </body>
