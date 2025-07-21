@@ -13,26 +13,29 @@
             font-family: 'Noto Sans JP', sans-serif;
         }
         
+        /* 彩度を抑えた落ち着いたトーンに変更 */
         .hero-bg {
-            background: linear-gradient(rgba(59, 130, 246, 0.8), rgba(16, 185, 129, 0.8)), url('https://www.crestrealestate.com/wp-content/uploads/2023/07/r-architecture-0tKCSyLXqQM-unsplash.jpg');
+            background: linear-gradient(rgba(52, 73, 94, 0.8), rgba(86, 132, 141, 0.8)), url('https://www.crestrealestate.com/wp-content/uploads/2023/07/r-architecture-0tKCSyLXqQM-unsplash.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         
+        /* CTAボタンの配色を低彩度の落ち着いたトーンに変更 */
         .btn-primary {
-            background: linear-gradient(135deg, #10b981, #3b82f6);
+            background: linear-gradient(135deg, #56848d, #34495e);
             transition: all 0.3s ease;
         }
         
+        /* ホバーエフェクトもトーンを合わせ、淡いブルー系に変更 */
         .btn-primary:hover {
-            background: linear-gradient(135deg, #059669, #2563eb);
+            background: linear-gradient(135deg, #6b8a9a, #56848d);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px rgba(86, 132, 141, 0.3);
         }
         
         .section-bg {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%);
         }
         
         .card-hover {
@@ -44,8 +47,9 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
+        /* テキストグラデーションも全体のトーンに合わせる */
         .text-gradient {
-            background: linear-gradient(135deg, #3b82f6, #10b981);
+            background: linear-gradient(135deg, #34495e, #56848d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -97,7 +101,7 @@
                         </h3>
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <i class="fas fa-leaf text-green-500 text-xl mr-4 mt-1"></i>
+                                <i class="fas fa-leaf text-xl mr-4 mt-1" style="color: #56848d;"></i>
                                 <div>
                                     <h4 class="font-semibold text-lg mb-2">深呼吸したくなる空間</h4>
                                     <p class="text-gray-600">無垢材の床と漆喰の壁が生み出す、自然な調湿機能。一歩足を踏み入れた瞬間から、空気の違いを実感していただけます。</p>
@@ -111,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-heart text-red-500 text-xl mr-4 mt-1"></i>
+                                <i class="fas fa-heart text-xl mr-4 mt-1" style="color: #34495e;"></i>
                                 <div>
                                     <h4 class="font-semibold text-lg mb-2">家族の絆を深める空間設計</h4>
                                     <p class="text-gray-600">オープンな間取りでありながら、プライバシーにも配慮。家族それぞれが心地よく過ごせる空間づくりを実現します。</p>
@@ -135,29 +139,29 @@
                 </h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-tree text-blue-600 text-2xl"></i>
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-tree text-2xl" style="color:#34495e;"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">厳選された自然素材</h3>
                         <p class="text-gray-600">国産の無垢材を中心に、調湿・断熱性能に優れた自然素材のみを使用。シックハウス症候群の心配もない、安心・安全な住環境を提供します。</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-drafting-compass text-green-600 text-2xl"></i>
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-drafting-compass text-2xl" style="color:#56848d;"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">一級建築士による設計</h3>
                         <p class="text-gray-600">豊富な経験を持つ一級建築士が、お客様のライフスタイルに合わせたオーダーメイド設計を実現。機能性と美しさを両立した理想の住まいを創造します。</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-hammer text-purple-600 text-2xl"></i>
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-hammer text-2xl" style="color:#34495e;"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">伝統工法×現代技術</h3>
                         <p class="text-gray-600">日本の伝統的な木造建築技術と最新の建築技術を融合。耐震性・耐久性に優れた構造で、次世代まで受け継がれる住まいを実現します。</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
-                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-lightbulb text-yellow-600 text-2xl"></i>
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                             <i class="fas fa-lightbulb text-2xl" style="color:#b29400;"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">環境配慮型設計</h3>
                         <p class="text-gray-600">省エネルギー設計により、光熱費を大幅に削減。太陽光発電や雨水利用システムなど、環境に優しい住まいづくりを推進しています。</p>
@@ -167,7 +171,7 @@
         </div>
     </section>
 
-    <section id="cta-section" class="py-16 bg-gradient-to-r from-blue-600 to-green-500 text-white">
+    <section id="cta-section" class="py-16 text-white" style="background: linear-gradient(to right, #34495e, #56848d);">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8">
                 理想の住まいについて、お気軽にご相談ください
@@ -176,7 +180,7 @@
                 経験豊富なスタッフが、あなたの夢を形にするお手伝いをいたします。<br>
                 まずは資料請求から始めてみませんか？
             </p>
-            <a href="#contact-form" class="btn-primary inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline shadow-lg bg-white text-blue-600 hover:bg-gray-100">
+            <a href="#contact-form" class="inline-block px-12 py-4 rounded-full text-lg font-semibold no-underline shadow-lg bg-white hover:bg-gray-100" style="color: #34495e;">
                 <i class="fas fa-file-alt mr-2"></i>
                 資料請求・無料相談はこちら
             </a>
@@ -193,11 +197,11 @@
                     <div class="order-2 md:order-1 flex justify-center">
                         <div class="grid grid-cols-2 gap-8 w-full max-w-md">
                             <div class="text-center">
-                                <div class="text-4xl font-bold text-green-600 mb-2">450件</div>
+                                <div class="text-4xl font-bold mb-2" style="color:#56848d;">450件</div>
                                 <div class="text-gray-600">施工実績</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-4xl font-bold text-purple-600 mb-2">22年</div>
+                                <div class="text-4xl font-bold mb-2" style="color:#34495e;">22年</div>
                                 <div class="text-gray-600">施工年数</div>
                             </div>
                         </div>
@@ -224,7 +228,7 @@
                     <i class="fas fa-file-alt mr-2"></i>
                     資料請求・無料相談はこちら
                 </a>
-                <a href="tel:059-356-0817" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline transition-all duration-300">
+                <a href="tel:059-356-0817" class="bg-transparent border-2 border-white hover:bg-white inline-block px-12 py-4 rounded-full text-lg font-semibold text-white no-underline transition-all duration-300" onmouseover="this.style.color='#2c3e50'" onmouseout="this.style.color='white'">
                     <i class="fas fa-phone mr-2"></i>
                     お電話でのお問い合わせ
                 </a>
@@ -243,20 +247,20 @@
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">お名前 *</label>
-                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">お電話番号 *</label>
-                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent">
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">ご希望の連絡方法</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent">
                                 <option>お電話</option>
                                 <option>メール</option>
                                 <option>どちらでも</option>
@@ -264,7 +268,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">ご要望・ご質問</label>
-                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ご要望やご質問がございましたら、お気軽にお聞かせください。"></textarea>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent" placeholder="ご要望やご質問がございましたら、お気軽にお聞かせください。"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn-primary px-12 py-4 rounded-full text-lg font-semibold text-white shadow-lg">
