@@ -17,18 +17,17 @@
 </script>
 <style>
 :root{
-  /* —— Palette（白背景は使わない） —— */
+  /* --- Palette（白背景は使わない） --- */
   --paper:#FFF6EF;      /* クリーム生成り（ベース） */
   --paper-2:#FBE9DA;    /* 濃いめクリーム（帯） */
   --paper-3:#F9E2CC;    /* 強調面 */
   --brand:#D89B5C;      /* テラコッタ */
   --brand-ink:#8C5A2B;  /* 焦げ茶 */
-  --ink:#4A3725;        /* 見出し */
-  --body:#5A4633;        /* 本文 */
+  --ink:#3D2B1F;        /* 見出し（より濃いこげ茶） */
+  --body:#332920;       /* 本文（黒に近い茶色） */
   --line:rgba(140,90,43,.22);
   --shadow:0 10px 30px rgba(0,0,0,.06);
   --r:16px; --r-lg:20px;
-  --wood:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1300&q=20');
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -36,15 +35,10 @@ body{
   margin:0;background:var(--paper);color:var(--body);
   font-family:"Zen Kaku Gothic New","Noto Sans JP",system-ui,sans-serif;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  /* 全面 木の気配（白は使わない） */
-  background-image:
-    linear-gradient(rgba(255,246,239,.86),rgba(255,246,239,.94)),
-    var(--wood);
-  background-size:cover,1200px auto; background-attachment:fixed,fixed; background-blend-mode:normal,overlay;
 }
 img{display:block;max-width:100%;height:auto}
 
-h1,h2,h3{font-family:"Shippori Mincho","Noto Serif JP",serif;color:var(--ink);letter-spacing:.01em;margin:0}
+h1,h2,h3{font-family:"Shippori Mincho","Noto Serif JP",serif;color:var(--ink);letter-spacing:.01em;margin:0; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);}
 h1{font-size:clamp(30px,3.3vw,46px);line-height:1.24}
 h2{font-size:clamp(22px,2.3vw,30px);line-height:1.28;margin-bottom:.5em}
 h3{font-size:clamp(18px,1.7vw,22px);line-height:1.3}
@@ -55,7 +49,7 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 .section{padding-block:clamp(56px,7vw,96px)}
 .card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
 .card-strong{background:var(--paper-3)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.15rem;border-radius:12px;font-weight:600;text-decoration:none;transition:.2s ease}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.15rem;border-radius:12px;font-weight:700;text-decoration:none;transition:.2s ease}
 .btn-primary{background:var(--brand);color:#fff}
 .btn-primary:hover{background:var(--brand-ink)}
 .btn-outline{border:1px solid var(--brand);color:var(--brand)}
@@ -65,9 +59,27 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 /* Header */
 .header{position:sticky;top:0;z-index:50;backdrop-filter:blur(6px);
   background:color-mix(in srgb,var(--paper-2) 78%, transparent); border-bottom:1px solid var(--line)}
-.header .nav{display:flex;gap:1rem;align-items:center}
-.header a{color:var(--body);text-decoration:none}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding-block:.7rem;}
+.header a{color:var(--body);text-decoration:none;font-weight: 500;}
 .header a:hover{color:var(--brand-ink)}
+
+.nav-toggle{display:none; z-index: 100; border: none; background: transparent; cursor: pointer; padding: 10px;}
+.hamburger{display: block; position: relative; width: 24px; height: 2px; background: var(--ink);}
+.hamburger::before, .hamburger::after{content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: var(--ink); transition: transform 0.3s, top 0.3s;}
+.hamburger::before{top: -8px;}
+.hamburger::after{top: 8px;}
+
+@media (max-width: 979px) {
+  .nav-toggle{display:block;}
+  .nav{display:none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--paper); padding: 1rem 0; border-bottom: 1px solid var(--line); box-shadow: var(--shadow);}
+  .header.nav-open .nav{display:flex; flex-direction: column; align-items: center; gap: 1.2rem;}
+  .header.nav-open .hamburger{background: transparent;}
+  .header.nav-open .hamburger::before{top: 0; transform: rotate(45deg);}
+  .header.nav-open .hamburger::after{top: 0; transform: rotate(-45deg);}
+}
+@media (min-width: 980px) {
+  .nav{display:flex;gap:1rem;align-items:center}
+}
 
 /* Hero */
 .hero{position:relative;isolation:isolate}
@@ -75,16 +87,12 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 @media (min-width:980px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
 .hero-visual{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
 .hero-visual img{width:100%;height:100%;object-fit:cover}
-/* パララックス */
 .hero-visual .parallax{position:absolute;inset:0;transform:translateY(0);will-change:transform}
-/* 浮遊する木漏れ日（ぼかし） */
 .hero .bokeh{position:absolute;inset:auto auto -60px -60px;width:220px;height:220px;background:radial-gradient(circle, rgba(216,155,92,.25), transparent 60%);filter:blur(20px);border-radius:50%}
 
 /* Scroll reveal */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease}
 .revealed{opacity:1;transform:none}
-
-/* スライドイン（左右） */
 .slide-left{opacity:0;transform:translateX(-26px);transition:opacity .8s ease, transform .8s ease}
 .slide-right{opacity:0;transform:translateX(26px);transition:opacity .8s ease, transform .8s ease}
 .slide-up{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
@@ -115,29 +123,22 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 .zig{display:grid;gap:1.2rem;grid-template-columns:1fr}
 @media (min-width:980px){.zig{grid-template-columns:1.1fr .9fr; align-items: start;}}
 .frame{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-/* captionスタイルを修正 */
 .caption{padding:1.2rem 0;}
 .caption .big{font-size:1.05rem;line-height:1.8;}
 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:var(--brand);color:#fff;font-weight:700;margin-right:.45rem;opacity:.9; float: left; margin-top: 5px;}
 .caption .big span.num + * { overflow: hidden; display: block; padding-left: .5em; }
 
-/* Before/After スライダー（既存保持） */
-.ba{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.ba img{display:block;width:100%;height:auto}
-.ba .after{position:absolute;inset:0;overflow:hidden}
-.ba .after img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ba input[type=range]{position:absolute;inset:auto 0 10px 0;width:100%;appearance:none;background:transparent}
-.ba input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--brand-ink);border-radius:999px}
-.ba input[type=range]::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:var(--brand);margin-top:-7px;border:2px solid #fff}
-.ba .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--brand-ink)}
-
-/* ギャラリー（横流れカルーセル） */
+/* ギャラリー */
 .gallery-wrap{position:relative}
 .gallery-rail{display:flex;gap:14px;overflow:hidden}
 .gallery-rail img{flex:0 0 min(86vw,520px);height:320px;object-fit:cover;border-radius:14px;box-shadow:var(--shadow)}
 .gallery-nav{position:absolute;inset:auto 0 -28px 0;display:flex;gap:8px;justify-content:center}
 .gallery-dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
 .gallery-dot.active{background:var(--brand-ink)}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;border-radius:50%;border:none;background:rgba(0,0,0,.3);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease;}
+.gallery-arrow:hover{background:rgba(0,0,0,.5)}
+.gallery-arrow.prev{left:1rem}
+.gallery-arrow.next{right:1rem}
 
 /* FAQ */
 .faq details{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:.9rem 1.1rem}
@@ -155,16 +156,19 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 <body data-show-price="false">
 
 <header class="header">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding-block:.7rem;">
-    <div style="font-family:'Cormorant Garamond',serif;color:var(--brand-ink);letter-spacing:.08em;font-size:.9rem">ArtSora</div>
+  <div class="container header-inner">
+    <div style="font-family:'Cormorant Garamond',serif;color:var(--brand-ink);letter-spacing:.08em;font-size:.9rem">アート・宙</div>
+    <button class="nav-toggle" aria-label="メニューを開閉する">
+      <span class="hamburger"></span>
+    </button>
     <nav class="nav small">
       <a href="#worries">お悩み</a>
       <a href="#services">サービス</a>
       <a href="#achievements">実績</a>
       <a href="#cases">実例</a>
       <a href="#gallery">写真</a>
-      <a href="#faq">FAQ</a>
-      <a href="#present">PRESENT</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#present">プレゼント</a>
       <a href="#contact-form">お問い合わせ</a>
     </nav>
   </div>
@@ -174,7 +178,7 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
   <div class="container hero-wrap">
     <div>
       <p class="reveal" style="font-family:'Cormorant Garamond',serif;color:var(--brand-ink);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem">Warmth & Wood</p>
-      <h1 class="reveal" style="margin-top:.4rem">自然素材で、暮らしにぬくもりを。<br>新しい暮らしを、アート・宙と。</h1>
+      <h1 class="reveal" style="margin-top:.4rem">自然素材で、暮らしに<br>ぬくもりを。<br>新しい暮らしを、<br>アート・宙と。</h1>
       <p class="reveal" style="margin-top:1rem">三重県でリフォーム・リノベーションするなら<strong>株式会社アート・宙</strong>。自然素材とやさしい色調で、住まいの「居ごこち」を丁寧に整えます。</p>
       <div class="reveal" style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
         <a href="#contact-form" class="btn btn-primary">資料請求</a>
@@ -195,7 +199,7 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
     <div class="worries-rail reveal" id="worriesRail" aria-label="住まいのお悩み">
       <div class="worry-sq"><p>最近、段差や動線が負担になってきたと感じる</p></div>
       <div class="worry-sq"><p>築年数が進み、住まいの劣化や将来が不安</p></div>
-      <div class="worry-sq"><p>夏は暑く冬は寒い——室温差で体がつらい</p></div>
+      <div class="worry-sq"><p>夏は暑く冬は寒い<br>室温差で体がつらい</p></div>
       <div class="worry-sq"><p>階段や水まわりが使いづらい・安全が心配</p></div>
       <div class="worry-sq"><p>使っていない部屋が多く、広さを活かせていない</p></div>
       <div class="worry-sq"><p>室内が暗く、昼間でも照明が欠かせない</p></div>
@@ -266,10 +270,9 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 <section class="section" id="cases" style="background:var(--paper-2)">
   <div class="container">
     <h2 class="reveal">実例紹介</h2>
-
     <div class="zig">
       <div class="frame">
-        <img src="https://i.postimg.cc/1zMJH3SJ/image.png" alt="床柱を残した和モダンなLDK">
+        <img src="https://i.postimg.cc/g0KmVy2g/2025-09-12-22-12-54.png" alt="床柱を残した和モダンなLDK">
       </div>
       <div>
         <h3>事例1｜和室続き→ワンフロア化でつながるLDK（鈴鹿市）</h3>
@@ -285,9 +288,7 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
         </div>
       </div>
     </div>
-
     <hr class="hr-bold" aria-hidden="true">
-
     <div class="zig" style="margin-top:1.4rem">
       <div>
         <h3>事例2｜梁あらわし仕上げで趣を活かす（津市）</h3>
@@ -303,17 +304,15 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
         </div>
       </div>
       <div class="frame">
-        <img src="https://i.postimg.cc/6QzGS7y4/image.png" alt="梁あらわしで趣のあるリビングダイニング">
+        <img src="https://i.postimg.cc/DZyFBWWn/2025-09-12-22-13-05.png" alt="梁あらわしで趣のあるリビングダイニング">
       </div>
     </div>
-
   </div>
 </section>
 
-
 <section class="section" id="gallery">
   <div class="container">
-    <h2 class="reveal">Gallery</h2>
+    <h2 class="reveal">写真</h2>
     <div class="gallery-wrap reveal">
       <div class="gallery-rail" id="galleryRail" aria-label="施工写真ギャラリー">
         <img src="https://i.postimg.cc/rm7wvVqD/LP1.jpg" alt="施工事例ギャラリー1">
@@ -325,13 +324,19 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
         <img src="https://i.postimg.cc/nr8n3317/LP7.jpg" alt="施工事例ギャラリー7">
       </div>
       <div class="gallery-nav" id="galleryDots" aria-hidden="true"></div>
+      <button id="galleryPrev" class="gallery-arrow prev" aria-label="前の写真へ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button id="galleryNext" class="gallery-arrow next" aria-label="次の写真へ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
     </div>
   </div>
 </section>
 
 <section class="section" id="faq" style="background:var(--paper-2)">
   <div class="container faq">
-    <h2 class="reveal">FAQ</h2>
+    <h2 class="reveal">よくある質問</h2>
     <details class="reveal"><summary>住みながら工事は可能ですか？ <span class="rotate">▾</span></summary><div class="small" style="margin-top:.6rem">工事範囲や工程を調整しながら可能です。騒音や粉じん対策、仮設の動線づくりもご提案します。</div></details>
     <details class="reveal"><summary>マンションのリノベも対応していますか？ <span class="rotate">▾</span></summary><div class="small" style="margin-top:.6rem">管理規約の確認・近隣調整・資材搬入経路の設計までワンストップで対応します。</div></details>
     <details class="reveal"><summary>無垢材や漆喰など自然素材の手入れは大変ですか？ <span class="rotate">▾</span></summary><div class="small" style="margin-top:.6rem">日常は乾拭きや固く絞った布で十分です。小キズは紙やすりで補修し、オイルを薄く塗ると馴染みます。漆喰は調湿性が高く、汚れは軽い拭き取りで目立ちにくくなります。</div></details>
@@ -341,9 +346,9 @@ p{font-size:clamp(15px,1.15vw,17px);line-height:1.9;margin:0}
 
 <section class="section" id="present" style="background:var(--paper-2)">
   <div class="container">
-    <h2 class="reveal" style="text-align:center">PRESENT</h2>
+    <h2 class="reveal" style="text-align:center">プレゼント</h2>
     <div class="card" style="padding:1rem;display:grid;gap:1rem;grid-template-columns:1fr;align-items:center">
-      <img src="https://i.postimg.cc/GmVnRPZ8/2025-09-05-14-34-16.png" alt="アート・宙 パンフレット" style="width: 100%; max-width:420px;margin-inline:auto;border-radius:12px;box-shadow:var(--shadow)">
+      <img src="https://i.postimg.cc/Ssxj2N3D/image.png" alt="アート・宙 パンフレット" style="width: 100%; max-width:420px;margin-inline:auto;border-radius:12px;box-shadow:var(--shadow)">
       <div class="small" style="text-align:center">
         <p class="small" style="font-weight:600;color:var(--brand-ink);margin-bottom:.4rem">資料請求いただいた方に、アート・宙のこだわりが詰まったパンフレットを無料進呈します。</p>
         <p>アート・宙のリフォーム・リノベーションの特徴や施工事例のご紹介など、<br>ホームページには掲載しきれない情報が盛りだくさんです。ぜひご覧ください。</p>
@@ -383,14 +388,13 @@ const io = new IntersectionObserver(entries=>{
     if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target);} 
   });
 },{threshold:.12});
-// .revealだけでなく、他のアニメーションクラスも対象にします
 for(const el of document.querySelectorAll('.reveal, .slide-left, .slide-right, .slide-up')) io.observe(el);
 
 /** Parallax (軽量) */
 const pv = document.getElementById('parallaxLayer');
 window.addEventListener('scroll',()=>{
   const rect = pv?.parentElement?.getBoundingClientRect?.();
-  if(!rect) return; const offset = (window.innerHeight - rect.top) * 0.03; // 控えめ
+  if(!rect) return; const offset = (window.innerHeight - rect.top) * 0.03;
   pv.style.transform = `translateY(${offset}px)`;
 });
 
@@ -415,17 +419,19 @@ document.querySelectorAll('.service-toggle').forEach(btn=>{
   }, 2800);
 })();
 
-/** Gallery simple carousel (auto + dots) */
+/** Gallery simple carousel */
 (function(){
   const rail = document.getElementById('galleryRail'); if(!rail) return;
   const slides = Array.from(rail.querySelectorAll('img'));
   const dotsWrap = document.getElementById('galleryDots');
-  let idx = 0, timer;
+  const prevBtn = document.getElementById('galleryPrev');
+  const nextBtn = document.getElementById('galleryNext');
+  let idx = 0;
 
   function buildDots(){
     slides.forEach((_,i)=>{
       const d=document.createElement('span'); d.className='gallery-dot'+(i===0?' active':'');
-      d.addEventListener('click',()=>go(i,true)); dotsWrap.appendChild(d);
+      d.addEventListener('click',()=>go(i)); dotsWrap.appendChild(d);
     });
   }
   function updateDots(){
@@ -433,30 +439,33 @@ document.querySelectorAll('.service-toggle').forEach(btn=>{
       d.classList.toggle('active', i===idx);
     });
   }
-  function go(i, pause){
-    idx = (i+slides.length)%slides.length;
+  function go(i){
+    idx = (i + slides.length) % slides.length;
     const target = slides[idx];
     rail.scrollTo({left: target.offsetLeft, behavior:'smooth'});
     updateDots();
-    if(pause){ clearInterval(timer); timer=setInterval(next,3400); }
   }
-  function next(){ go(idx+1); }
+  function next(){ go(idx + 1); }
+  function prev(){ go(idx - 1); }
 
   buildDots();
-  timer=setInterval(next,3400);
-  // ドラッグ/スワイプで操作しやすく
+  
+  if(prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+  }
+
   let startX=null, startLeft=0;
-  rail.addEventListener('pointerdown',e=>{ startX=e.clientX; startLeft=rail.scrollLeft; rail.setPointerCapture(e.pointerId); clearInterval(timer); });
+  rail.addEventListener('pointerdown',e=>{ startX=e.clientX; startLeft=rail.scrollLeft; rail.setPointerCapture(e.pointerId); });
   rail.addEventListener('pointermove',e=>{ if(startX!==null){ rail.scrollLeft = startLeft - (e.clientX-startX); }});
   rail.addEventListener('pointerup',e=>{
     if(startX!==null){
-      // 一番近いスライドにスナップ
       const mid = rail.scrollLeft + rail.clientWidth/2;
       const nearest = slides.reduce((a,el,i)=>{
         const center = el.offsetLeft + el.clientWidth/2;
         return (Math.abs(center-mid) < Math.abs((slides[a].offsetLeft+slides[a].clientWidth/2)-mid)) ? i : a;
       },0);
-      startX=null; go(nearest,true);
+      startX=null; go(nearest);
     }
   });
 })();
@@ -471,6 +480,17 @@ document.querySelectorAll('.caption').forEach(cap=>{
   },{threshold:.4});
   io4.observe(cap);
 });
+
+/** Hamburger Menu Toggle */
+(function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const header = document.querySelector('.header');
+  if(navToggle && header){
+    navToggle.addEventListener('click', () => {
+      header.classList.toggle('nav-open');
+    });
+  }
+})();
 </script>
 </body>
 </html>
